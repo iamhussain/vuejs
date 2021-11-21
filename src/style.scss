@@ -1,0 +1,383 @@
+$primaryColor : #209AC4;
+$secondaryColor : #B300A4;
+$accentColor: #5739A2; 
+$borderColor: #D5D5D5;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html{
+    width: 100%;
+    height: 100%;
+    
+}
+body{
+    background: #F6F6F6;
+    font-family: poppins;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.v-container{
+    padding: 40px;
+    width: 1700px;
+    margin: 0 auto;
+   
+    .v-application{
+        .rounded-lg{
+            border-radius: 12px !important
+        }
+        .v-btn{
+            text-transform: none;
+            letter-spacing: 0;
+            font-weight: 500;
+            background: white;
+            border-color: $borderColor;
+            &.v-size--x-large{
+                border-radius: 10px;
+                span{
+                    font-size: 20px;
+                
+                }
+                
+            }
+
+        }
+        .action-footer{
+            a{
+                color: black;
+            }
+            .v-btn{
+                min-width: 58%;
+            }
+        }
+        .primary--text {
+            color: $secondaryColor !important;
+            caret-color: $secondaryColor !important;
+        }
+        .v-input--selection-controls{
+            margin: 0;
+            padding: 0 20px;
+            & + .v-input--selection-controls{
+                border-left: 1px solid $borderColor;
+            }
+            .v-input--selection-controls__ripple{
+                left: -9px;
+            }
+        }
+        .v-item--active {
+            font-weight: bold;
+            .mdi{
+                &:before{
+                    background: linear-gradient(231.18deg, #209AC4 15.03%, #2D61BC 88.56%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+        .v-input--selection-controls__input{
+            width: 30px;
+        }
+        .v-input__slot{
+            margin-bottom: 0;
+        }
+        .v-sheet.v-card--hover:hover{
+            box-shadow: 
+            4px 4px 25px rgba(0,0,0,.12)
+        }
+        
+    }
+}
+.flex-center{
+    display: flex;
+    align-items: center;
+}
+// veutify css overwrite
+.w-100{
+    width: 100%
+}
+.plans{
+    @extend .flex-center;
+    margin-left: -15px;
+    margin-right: -15px;
+    margin-top: 40px;
+    hr{
+        margin: 15px 0;
+        opacity: .3;
+        width: 100%;
+    }
+    .slick-slider{
+        width: 100%;
+    }
+    .slick-track{
+        max-width: 3000px;
+        display: flex;
+        .slick-slide{
+            flex-shrink: 0;
+            width: 410px;
+            opacity: .5;
+            > div{
+                height: 100%;
+            }
+            &.slick-active{
+                opacity: 1;
+            }
+        }
+
+    }
+    .slick-dots{
+        position: relative;
+        bottom: 0;
+        padding: 0;
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        margin-top: 40px;
+        li{
+            background: $secondaryColor;
+            border-radius: 50%;
+            width: 10px;
+            height: 10px;
+            opacity: .5;
+            transition: .5s;
+            margin: 0 7px;
+            button::before{
+                content: none;
+
+            }
+            &.slick-active{
+                width: 15px;
+                height: 15px;
+                opacity: 1;
+            }
+        }
+    }
+    
+    .v-card{
+        position: relative;
+        padding: 25px;
+        margin: 0 15px;
+        width: calc(100% - 30px) !important;
+        height: 100%;
+        display: flex !important;
+        flex-flow: column;
+        border-color: $borderColor;
+        &:before{
+            content: "";
+            position: absolute;
+            left: -1px;
+            top: 0;
+            width: 10px;
+            height: 100%;
+            background: linear-gradient(to bottom, $secondaryColor , $primaryColor 40%);
+            border-radius: 12px 0 0 12px;
+        }
+        span{
+            font-size: 16px;
+        }
+        .v-card__title{
+            font-weight: bold;
+            font-size: 24px;
+            line-height: 100%;
+            align-items: baseline;
+            letter-spacing: 0;
+            line-height: 27px;
+        }
+    }
+    .grey--text{
+        position: relative;
+        font-weight: normal !important;
+        &:before{
+            position: absolute;
+            content: "";
+            width: 2px;
+            height: 26px;
+            background: #9e9e9e;
+            transform: rotate(-45deg) translateX(-50%);
+            left: 50%;
+            top: 0;
+        }
+    }
+}
+.plan-amount{
+    color: $secondaryColor;
+    
+    .v-card__title{
+        small{
+            font-weight: normal;
+        }
+    }
+    .v-card__text{
+        font-size: 14px;
+        color: black;
+    }
+
+}
+.plan-name{
+    color: $primaryColor;
+}
+.data, .mins{
+    & > *{
+        margin-right: 10px;
+        white-space: nowrap;
+    }
+}
+.data{
+    margin-bottom: 10px;
+}
+.details{
+    ul{
+        list-style: none;
+    }
+    li{
+        position: relative;
+        & + li{
+            margin-top: 13px;
+        }
+        &:before {
+            content: "\F012C"; 
+            font-family: Material Design Icons;
+            display: inline-block;
+            margin-left: -1.3em;
+            width: 1.3em;
+          }
+    }
+}
+.limited-offer{
+    margin-top: auto;
+    .v-chip{
+        background: linear-gradient(to right, $accentColor, $secondaryColor 50%) !important;
+        color: white;
+        margin-bottom: 5px;
+    }
+}
+
+.plans-filter{
+    margin-left: auto;
+    display: flex;
+    align-items: flex-start;
+    overflow: hidden;
+    > *{
+        transition: all 0.4s;
+    }
+    &.hide{
+        overflow: hidden;
+        > *{
+            opacity: 0;
+            margin-top: -100%;
+        }
+    }
+    > span{
+        color: #646464;
+    }
+    .v-label{
+        color: black;
+    }
+    .v-btn{
+        font-weight: 600 !important;
+    }
+}
+.section-title{
+    color: black;
+    min-height: 70px;
+    .v-card__title{
+        font-weight: bold;
+        font-size: 24px;
+    }
+}
+.most-popular{
+    position: absolute;
+    top: -36px;
+    left: 8px;
+    background: #00174a;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px 10px 0 0;
+    padding: 6px 34px;
+}
+@media (max-width : 1600px){
+    .v-container{
+        width: 1400px;
+    }
+   
+}
+
+@media (max-width : 1335px){
+
+ .v-container{
+     width: 100%;
+     padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+ }
+ .v-application{
+    .plans{
+        margin-top: 50px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .section-title{
+        flex-wrap: wrap;
+        > div{
+            justify-content: center;
+            padding: 0 20px !important;
+            word-break: keep-all;
+        }
+        .v-card__title{
+            font-size: 20px;
+            margin-bottom: 15px;
+        }
+        .v-btn{
+            margin-left: auto;
+            margin-right: 20px;
+            order: 1;
+            margin-bottom: -20px;
+        }
+        .plans-filter{
+            width: 100%;
+            margin-left: 0;
+            order: 2;
+        }
+        .v-input--radio-group__input{
+           flex-flow: row;
+           > div{
+               width: 50%;
+               align-items: center;
+           }
+        }
+    }
+    .plans-filter{
+        flex-flow: column;
+        span{
+            width: 100%;
+        }
+        .v-input--selection-controls{
+            padding: 10px 0;
+            width: 100%;
+            .v-messages{
+                display: none;
+            }
+            + .v-input--selection-controls{
+                border-left: none;
+                border-top: 1px solid $borderColor;
+            }
+        } 
+    }
+ }
+ 
+}
+@media (max-width : 767px){
+  .v-container{
+     padding: 20px 0px;
+  }
+  .slick-track{
+    .slick-slide{
+        width: 397px;
+    }
+    
+}
+}
